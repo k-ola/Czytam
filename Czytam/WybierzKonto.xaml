@@ -11,7 +11,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="img/3438857.jpg"/>
         </Grid.Background>
-        <Label Content="Wybierz konto" HorizontalAlignment="Center" Margin="200,50,200,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontSize="48" FontWeight="Bold" FontStyle="Italic" Height="94" Width="400"/>
+        <Label Content="Wybierz konto" HorizontalAlignment="Center" Margin="200,50,200,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontSize="48" FontWeight="Bold" FontStyle="Italic" />
         <Button Content="Cofnij" HorizontalAlignment="Right" Margin="0,0,100,100" VerticalAlignment="Bottom" Width="70" Height="40" Click="MainMenu" FontFamily="Nyala" FontSize="18">
             <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">

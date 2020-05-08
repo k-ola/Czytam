@@ -12,7 +12,7 @@
             <ImageBrush ImageSource="img/3438857.jpg"/>
         </Grid.Background>
 
-        <Label Content="Dodaj nowego użytkownika" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Height="80" FontSize="48" FontFamily="Segoe Script" FontStyle="Italic" FontWeight="Bold" Width="740" Grid.Column="1"/>
+        <Label Content="Dodaj nowego użytkownika" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Segoe Script" FontStyle="Italic" FontWeight="Bold" />
         <TextBox HorizontalAlignment="Center" Height="60" Margin="0,-250,0,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Center" Width="400" TextChanged="TextBox_TextChanged" Grid.Column="1" FontFamily="Nyala" FontSize="30" Background="#FFDC93E8"/>
         <TextBox HorizontalAlignment="Center" Height="60" Margin="0,-50,0,0" TextWrapping="Wrap" Text="Wiek (lata)" VerticalAlignment="Center" Width="400" Grid.Column="1" FontFamily="Nyala" FontSize="30" Background="#FFDC93E8"/>
         <Button Content="Zapisz" HorizontalAlignment="Center" Margin="0,0,0,-150" VerticalAlignment="Center" Width="150" Height="50" Grid.Column="1" Click="WybKon" FontFamily="Nyala" FontSize="20">

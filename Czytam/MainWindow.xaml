@@ -36,7 +36,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Label Content="Poczytajmy!" Grid.Column="1" HorizontalAlignment="Center" Margin="230,50,230,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontSize="48" FontWeight="Bold" FontStyle="Italic" Height="94" Width="332"/>
+        <Label Content="Poczytajmy!" HorizontalAlignment="Center" Margin="230,50,230,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontSize="48" FontWeight="Bold" FontStyle="Italic" />
 
     </Grid>
 </Window>
