@@ -1,0 +1,40 @@
+﻿<Window x:Class="Czytam.WybierzModul"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Czytam"
+        mc:Ignorable="d"
+        Title="Wybierz moduł" Height="800" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="img/3438857.jpg"/>
+        </Grid.Background>
+        <Label Content="Wybierz moduł " HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Height="90" FontSize="48" FontFamily="Segoe Script" FontStyle="Italic" FontWeight="Bold" Width="430"/>
+        <Button Content="Lekcje" Margin="0,-200,0,0" Width="400" Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" RenderTransformOrigin="0.952,0.457" FontFamily="Nyala" FontSize="22" Click="WybLek">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Ćwiczenia" Margin="0,100,0,0" Width="400" Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" FontFamily="Nyala" FontSize="22" Click="WybCw">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Cofnij" Margin="0,0,100,100" Width="70" Height="40"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" FontFamily="Nyala" FontSize="18" Click="WybKon">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
