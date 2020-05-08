@@ -5,17 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Czytam"
         mc:Ignorable="d"
-        Title="Dodaj nowego użytkownika" Height="800" Width="1000"
+        Icon="img/man.png"
+        Title="Dodaj nowego Czytelnika" Height="800" Width="1000"
         WindowStartupLocation="CenterScreen">
-    <Grid Margin="0" Height="800" Width="1000">
+    
+    <Grid Margin="0" >
         <Grid.Background>
             <ImageBrush ImageSource="img/3438857.jpg"/>
         </Grid.Background>
 
-        <Label Content="Dodaj nowego użytkownika" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Segoe Script" FontStyle="Italic" FontWeight="Bold" />
-        <TextBox HorizontalAlignment="Center" Height="60" Margin="0,-250,0,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Center" Width="400" TextChanged="TextBox_TextChanged" Grid.Column="1" FontFamily="Nyala" FontSize="30" Background="#FFDC93E8"/>
-        <TextBox HorizontalAlignment="Center" Height="60" Margin="0,-50,0,0" TextWrapping="Wrap" Text="Wiek (lata)" VerticalAlignment="Center" Width="400" Grid.Column="1" FontFamily="Nyala" FontSize="30" Background="#FFDC93E8"/>
-        <Button Content="Zapisz" HorizontalAlignment="Center" Margin="0,0,0,-150" VerticalAlignment="Center" Width="150" Height="50" Grid.Column="1" Click="WybKon" FontFamily="Nyala" FontSize="20">
+        <Label Content="Dodaj nowego Czytelnika" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Segoe Script" FontStyle="Italic" FontWeight="Bold" />
+        <TextBox HorizontalAlignment="Center" Height="60" Margin="0,-270,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="400" TextChanged="TextBox_TextChanged"  FontFamily="Nyala" FontSize="30" Background="White" />
+        <Label Content="Imię" HorizontalAlignment="center" VerticalAlignment="Center" Margin="-350,-185,0,0" FontFamily="Nyala" FontSize="20" FontStyle="Italic"/>
+        <DatePicker HorizontalAlignment="Center" Height="60" Margin="0,-40,0,0" VerticalAlignment="Center" Width="400" FontFamily="Nyala" FontSize="24"  SelectedDateFormat="Long"  Background="White">
+            <DatePicker.BlackoutDates>
+                <CalendarDateRange Start="2020-05-10"/>
+            </DatePicker.BlackoutDates>
+        </DatePicker>
+        <Label Content="Data urodzenia" HorizontalAlignment="center" VerticalAlignment="Center" Margin="-270,40,0,0" FontFamily="Nyala" FontSize="20" FontStyle="Italic"/>
+        <Button Content="Zapisz" HorizontalAlignment="Center" Margin="0,0,0,-200" VerticalAlignment="Center" Width="150" Height="50" Grid.Column="1" Click="WybKon" FontFamily="Nyala" FontSize="20">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
                     <GradientStop Color="Violet" Offset="0"/>
@@ -24,12 +32,13 @@
             </Button.Background>
         </Button>
         <Button Content="Cofnij" HorizontalAlignment="Right" Margin="0,0,100,100" VerticalAlignment="Bottom" Width="70" Height="40" Click="MainMenu" FontFamily="Nyala" FontSize="18">
-        <Button.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
-                <GradientStop Color="Violet" Offset="0"/>
-                <GradientStop Color="#FF0F5FAE" Offset="1"/>
-            </LinearGradientBrush>
-        </Button.Background>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
         </Button>
+
     </Grid>
 </Window>

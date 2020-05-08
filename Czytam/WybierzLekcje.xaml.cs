@@ -27,7 +27,7 @@ namespace Czytam
         private void WybMod(object sender, RoutedEventArgs e)
         {
             WybierzModul objWybMod = new WybierzModul();
-            this.Visibility = Visibility.Hidden;
+            this.Close();
             objWybMod.Show();
         }
     }

@@ -32,14 +32,14 @@ namespace Czytam
         private void MainMenu(object sender, RoutedEventArgs e)
         {
            MainWindow objMainMenu = new MainWindow();
-            this.Visibility = Visibility.Hidden;
+            this.Close();
             objMainMenu.Show();
         }
 
         private void WybMod(object sender, RoutedEventArgs e)
         {
             WybierzModul objWybMod = new WybierzModul();
-            this.Visibility = Visibility.Hidden;
+            this.Close();
             objWybMod.Show();
         }
     }

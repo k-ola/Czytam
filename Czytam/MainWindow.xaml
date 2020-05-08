@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Czytam"
         mc:Ignorable="d"
+        Icon="img/man.png"
         Title="Poczytajmy! Aplikacja wspomagająca naukę czytania." Height="800" Width="1000"
         WindowStartupLocation="CenterScreen">
-    <Grid Margin="0" Height="800" Width="1000">
+    <Grid Margin="0">
         <Grid.Background>
             <ImageBrush ImageSource="img/3438857.jpg"/>
         </Grid.Background>

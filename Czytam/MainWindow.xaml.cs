@@ -27,34 +27,18 @@ namespace Czytam
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void WybKon(object sender, RoutedEventArgs e)
         {
             WybierzKonto objWybierzKonto = new WybierzKonto();
-            this.Visibility = Visibility.Hidden;
             objWybierzKonto.Show();
-            
+            this.Close();
         }
         
         private void DodKon(object sender, RoutedEventArgs e)
         {
             Dodaj objDodaj = new Dodaj();
-            this.Visibility = Visibility.Hidden;
             objDodaj.Show();
+            this.Close();
         }
 
         void CloseProgram(object sender, RoutedEventArgs e)

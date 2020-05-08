@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Czytam"
         mc:Ignorable="d"
+        Icon="img/man.png"
         Title="Wybierz konto" Height="800" Width="1000"
         WindowStartupLocation="CenterScreen">
-    <Grid Margin="0" Height="800" Width="1000">
+    <Grid Margin="0" >
         <Grid.Background>
             <ImageBrush ImageSource="img/3438857.jpg"/>
         </Grid.Background>
@@ -21,9 +22,9 @@
 
             </Button.Background>
         </Button>
-        <RadioButton Content="Dziecko 1" HorizontalAlignment="center" Margin="454,168,456,608" VerticalAlignment="center" FontFamily="Nyala" FontSize="22"/>
+        <RadioButton Content="Dziecko 1" HorizontalAlignment="center" Margin="0,-460,0,0" VerticalAlignment="center" FontFamily="Nyala" FontSize="22"/>
         <RadioButton Content="Dziecko 2" HorizontalAlignment="center" Margin="0,-360,0,0" VerticalAlignment="center" FontFamily="Nyala" FontSize="22"/>
-        <Button Content="Wybierz" HorizontalAlignment="Center" Margin="0,0,0,-150" VerticalAlignment="Center" Width="150" Height="50" Grid.Column="1" FontFamily="Nyala" FontSize="20" Click="WybMod">
+        <Button Content="Wybierz" HorizontalAlignment="Center" Margin="0,0,0,-150" VerticalAlignment="Center" Width="150" Height="50" FontFamily="Nyala" FontSize="20" Click="WybMod">
         <Button.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
                 <GradientStop Color="Violet" Offset="0"/>

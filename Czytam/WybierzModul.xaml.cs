@@ -27,21 +27,21 @@ namespace Czytam
         private void WybCw(object sender, RoutedEventArgs e)
         {
             WybierzCwiczenie objWybCw = new WybierzCwiczenie();
-            this.Visibility = Visibility.Hidden;
+            this.Close();
             objWybCw.Show();
         }
 
         private void WybLek(object sender, RoutedEventArgs e)
         {
             WybierzLekcje objWybLek = new WybierzLekcje();
-            this.Visibility = Visibility.Hidden;
+            this.Close();
             objWybLek.Show();
         }
 
         private void WybKon(object sender, RoutedEventArgs e)
         {
             WybierzKonto objWybierzKonto = new WybierzKonto();
-            this.Visibility = Visibility.Hidden;
+            this.Close();
             objWybierzKonto.Show();
         }
     }

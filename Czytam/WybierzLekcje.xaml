@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Czytam"
         mc:Ignorable="d"
+        Icon="img/man.png"
         Title="Wybierz lekcję" Height="800" Width="1000"
-        WindowStartupLocation="CenterScreen" Background="#FF31BFB9">
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="img/3438857.jpg"/>

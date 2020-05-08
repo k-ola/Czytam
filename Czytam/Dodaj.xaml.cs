@@ -41,8 +41,8 @@ namespace Czytam
         private void WybKon(object sender, RoutedEventArgs e)
         {
             WybierzKonto objWybierzKonto = new WybierzKonto();
-            this.Visibility = Visibility.Hidden;
             objWybierzKonto.Show();
+            this.Close();
         }
     }
 }
