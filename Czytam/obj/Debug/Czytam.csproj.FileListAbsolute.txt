@@ -23,28 +23,28 @@ D:\!!!_DANE_NIE_USUWAC_!!!\Desktop\WSIiZ\SemestrVI\Inżynieria oprogramowania\pr
 D:\!!!_DANE_NIE_USUWAC_!!!\Desktop\WSIiZ\SemestrVI\Inżynieria oprogramowania\projekt\Czytam\Czytam\obj\Debug\Czytam.exe
 D:\!!!_DANE_NIE_USUWAC_!!!\Desktop\WSIiZ\SemestrVI\Inżynieria oprogramowania\projekt\Czytam\Czytam\obj\Debug\Czytam.pdb
 D:\!!!_DANE_NIE_USUWAC_!!!\Desktop\WSIiZ\SemestrVI\Inżynieria oprogramowania\projekt\Czytam\Czytam\obj\Debug\Czytam.csprojAssemblyReference.cache
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.exe.config
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.exe
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.pdb
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam.csprojAssemblyReference.cache
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Dodaj.g.cs
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\AddAccount.g.cs
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\MainWindow.g.cs
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\WybierzCwiczenie.g.cs
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\WybierzKonto.g.cs
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\WybierzLekcje.g.cs
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\WybierzModul.g.cs
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\ChooseEx.g.cs
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\ChooseAcc.g.cs
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\ChooseLesson.g.cs
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\ChooseModule.g.cs
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\App.g.cs
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam_MarkupCompile.cache
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam_MarkupCompile.lref
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Dodaj.baml
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.exe.config
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.exe
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.pdb
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\AddAccount.baml
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\MainWindow.baml
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\WybierzCwiczenie.baml
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\WybierzKonto.baml
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\WybierzLekcje.baml
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\WybierzModul.baml
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\ChooseEx.baml
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\ChooseAcc.baml
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\ChooseLesson.baml
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\ChooseModule.baml
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam.g.resources
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam.Properties.Resources.resources
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam.csproj.GenerateResource.cache
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam.csproj.CoreCompileInputs.cache
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam.exe
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam.pdb
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam.csprojAssemblyReference.cache

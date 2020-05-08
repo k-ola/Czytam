@@ -13,7 +13,7 @@
             <ImageBrush ImageSource="img/3438857.jpg"/>
         </Grid.Background>
         
-        <Button Content="Wybierz konto" Margin="0,-200,0,0" Width="400" Click="WybKon" Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" RenderTransformOrigin="0.952,0.457" FontFamily="Nyala" FontSize="22">
+        <Button Content="Wybierz konto" Margin="0,-200,0,0" Width="400" Click="ChoAcc" Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" RenderTransformOrigin="0.952,0.457" FontFamily="Nyala" FontSize="22">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
                     <GradientStop Color="Violet" Offset="0"/>
@@ -21,7 +21,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Dodaj konto" Margin="0,100,0,0" Width="400" Height="100" Click="DodKon" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" FontFamily="Nyala" FontSize="22">
+        <Button Content="Dodaj konto" Margin="0,100,0,0" Width="400" Height="100" Click="AddAcc" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" FontFamily="Nyala" FontSize="22">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
                     <GradientStop Color="Violet" Offset="0"/>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="Czytam.AddAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Czytam"
+        mc:Ignorable="d"
+        Icon="img/man.png"
+        Title="Dodaj nowego Czytelnika" Height="800" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    
+    <Grid Margin="0" >
+        <Grid.Background>
+            <ImageBrush ImageSource="img/3438857.jpg"/>
+        </Grid.Background>
+
+        <Label Content="Dodaj nowego Czytelnika" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Segoe Script" FontStyle="Italic" FontWeight="Bold" />
+        <TextBox x:Name ="firstNameTextBox" HorizontalAlignment="Center" Height="60" Margin="0,-270,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="400" TextChanged="TextBox_TextChanged"  FontFamily="Nyala" FontSize="30" Background="White" />
+        <Label Content="Imię" HorizontalAlignment="center" VerticalAlignment="Center" Margin="-350,-185,0,0" FontFamily="Nyala" FontSize="20" FontStyle="Italic"/>
+        <DatePicker x:Name ="dateOfBirthDatePicker" HorizontalAlignment="Center" Height="60" Margin="0,-40,0,0" VerticalAlignment="Center" Width="400" FontFamily="Nyala" FontSize="24"  SelectedDateFormat="Long"  Background="White">
+            <DatePicker.BlackoutDates>
+                <CalendarDateRange Start="2020-05-10"/>
+            </DatePicker.BlackoutDates>
+        </DatePicker>
+        <Label Content="Data urodzenia" HorizontalAlignment="center" VerticalAlignment="Center" Margin="-270,40,0,0" FontFamily="Nyala" FontSize="20" FontStyle="Italic"/>
+        <Button x:Name="CreateUserButton_Click" Content="Zapisz" HorizontalAlignment="Center" Margin="0,0,0,-200" VerticalAlignment="Center" Width="150" Height="50" Grid.Column="1" Click="ChoAcc" FontFamily="Nyala" FontSize="20">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Cofnij" HorizontalAlignment="Right" Margin="0,0,100,100" VerticalAlignment="Bottom" Width="70" Height="40" Click="MainMenu" FontFamily="Nyala" FontSize="18">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

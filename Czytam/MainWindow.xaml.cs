@@ -20,24 +20,24 @@ namespace Czytam
     /// </summary>
     public partial class MainWindow : Window
     {
-        private object objWybierzKonto;
+        private object objChooseAcc;
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void WybKon(object sender, RoutedEventArgs e)
+        private void ChoAcc(object sender, RoutedEventArgs e)
         {
-            WybierzKonto objWybierzKonto = new WybierzKonto();
-            objWybierzKonto.Show();
+            ChooseAcc objChooseAcc = new ChooseAcc();
+            objChooseAcc.Show();
             this.Close();
         }
         
-        private void DodKon(object sender, RoutedEventArgs e)
+        private void AddAcc(object sender, RoutedEventArgs e)
         {
-            Dodaj objDodaj = new Dodaj();
-            objDodaj.Show();
+            AddAccount objAdd = new AddAccount();
+            objAdd.Show();
             this.Close();
         }
 

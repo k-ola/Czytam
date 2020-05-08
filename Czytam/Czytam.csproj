@@ -70,23 +70,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Dodaj.xaml.cs">
-      <DependentUpon>Dodaj.xaml</DependentUpon>
+    <Compile Include="AddAccount.xaml.cs">
+      <DependentUpon>AddAccount.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs" />
-    <Compile Include="WybierzCwiczenie.xaml.cs">
-      <DependentUpon>WybierzCwiczenie.xaml</DependentUpon>
+    <Compile Include="ChooseEx.xaml.cs">
+      <DependentUpon>ChooseEx.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WybierzKonto.xaml.cs">
-      <DependentUpon>WybierzKonto.xaml</DependentUpon>
+    <Compile Include="ChooseAcc.xaml.cs">
+      <DependentUpon>ChooseAcc.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WybierzLekcje.xaml.cs">
-      <DependentUpon>WybierzLekcje.xaml</DependentUpon>
+    <Compile Include="ChooseLesson.xaml.cs">
+      <DependentUpon>ChooseLesson.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WybierzModul.xaml.cs">
-      <DependentUpon>WybierzModul.xaml</DependentUpon>
+    <Compile Include="ChooseModule.xaml.cs">
+      <DependentUpon>ChooseModule.xaml</DependentUpon>
     </Compile>
-    <Page Include="Dodaj.xaml">
+    <Page Include="AddAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,19 +102,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WybierzCwiczenie.xaml">
+    <Page Include="ChooseEx.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WybierzKonto.xaml">
+    <Page Include="ChooseAcc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WybierzLekcje.xaml">
+    <Page Include="ChooseLesson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WybierzModul.xaml">
+    <Page Include="ChooseModule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
