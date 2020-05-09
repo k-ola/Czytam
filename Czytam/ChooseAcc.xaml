@@ -22,8 +22,21 @@
 
             </Button.Background>
         </Button>
-        <RadioButton Content="Dziecko 1" HorizontalAlignment="center" Margin="0,-460,0,0" VerticalAlignment="center" FontFamily="Nyala" FontSize="22"/>
-        <RadioButton Content="Dziecko 2" HorizontalAlignment="center" Margin="0,-360,0,0" VerticalAlignment="center" FontFamily="Nyala" FontSize="22"/>
+        <ListBox x:Name="usersListBox" 
+            HorizontalAlignment="Center" Height="auto" 
+                 Margin="0,-460,0,0" Padding="10,10,10,10" VerticalAlignment="Center" Width="auto" Loaded="usersListBox_Loaded"
+                 Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding first_name}"/>
+                        <TextBlock Text=", "/>
+                        <TextBlock Text="{Binding age_in_years}"/>
+                        <TextBlock Text=" lat"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button Content="Wybierz" HorizontalAlignment="Center" Margin="0,0,0,-150" VerticalAlignment="Center" Width="150" Height="50" FontFamily="Nyala" FontSize="20" Click="ChoMod">
         <Button.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
