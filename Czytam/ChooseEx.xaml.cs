@@ -30,5 +30,12 @@ namespace Czytam
             objChooseMod.Show();
             this.Close();
         }
+
+        private void ChoEx1(object sender, RoutedEventArgs e)
+        {
+            Ex1Desc objEx1dexc = new Ex1Desc();
+            objEx1dexc.Show();
+            this.Close();
+        }
     }
 }

@@ -13,6 +13,14 @@
             <ImageBrush ImageSource="img/3438857.jpg"/>
         </Grid.Background>
         <Label Content="Wybierz ćwiczenie" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontWeight="Bold" FontStyle="Italic" FontSize="48"/>
+        <Button Content="Ćwiczenie 1" Margin="0,-300,0,0" Width="400" Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" FontFamily="Nyala" FontSize="22" Click="ChoEx1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
         <Button Content="Cofnij" HorizontalAlignment="Right" Margin="0,0,100,100" VerticalAlignment="Bottom" Width="70" Height="40" FontFamily="Nyala" FontSize="18" Click="ChoMod" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
