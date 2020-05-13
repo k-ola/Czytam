@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/man.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/la.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/ma.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/mi.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/ta.mp3")]
 
 

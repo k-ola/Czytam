@@ -30,5 +30,12 @@ namespace Czytam
             this.Close();
             objChooseMod.Show();
         }
+
+        private void Les1(object sender, RoutedEventArgs e)
+        {
+            Lesson1 objLes1 = new Lesson1();
+            objLes1.Show();
+            this.Close();
+        }
     }
 }

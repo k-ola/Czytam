@@ -52,3 +52,6 @@ C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Ex1Desc.g.cs
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Ex1Desc.baml
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Exercise1.g.cs
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Exercise1.baml
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Lesson1.g.cs
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Lesson1.baml
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam_Content.g.cs

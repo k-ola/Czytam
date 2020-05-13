@@ -79,6 +79,9 @@
     <Compile Include="Exercise1.xaml.cs">
       <DependentUpon>Exercise1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Lesson1.xaml.cs">
+      <DependentUpon>Lesson1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs" />
     <Compile Include="ChooseEx.xaml.cs">
       <DependentUpon>ChooseEx.xaml</DependentUpon>
@@ -101,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Exercise1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lesson1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,6 +195,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sounds\la.mp3" />
+    <Content Include="sounds\ma.mp3" />
+    <Content Include="sounds\mi.mp3" />
+    <Content Include="sounds\ta.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
