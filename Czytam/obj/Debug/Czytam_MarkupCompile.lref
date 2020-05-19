@@ -1,12 +1,11 @@
 ﻿
-
-FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\AddAccount.xaml;;
-FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\MainWindow.xaml;;
-FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\ChooseEx.xaml;;
-FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\ChooseAcc.xaml;;
-FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\ChooseLesson.xaml;;
-FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\ChooseModule.xaml;;
-FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\Ex1Desc.xaml;;
-FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\Exercise1.xaml;;
-FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\Lesson1.xaml;;
+FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\App.xaml;;
+FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\Views\MainWindow.xaml;;
+FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\Views\AddNewUserWindow.xaml;;
+FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\Views\ChooseAccountWindow.xaml;;
+FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\Views\ChooseExerciseWindow.xaml;;
+FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\Views\ChooseLessonWindow.xaml;;
+FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\Views\ChooseModuleWindow.xaml;;
+FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\Views\ExerciseWindow.xaml;;
+FC:\Users\Ola\source\repos\k-ola\Czytam\Czytam\Views\LessonWindow.xaml;;
 

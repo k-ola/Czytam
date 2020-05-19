@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CzytamAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="exercis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lesson_id" Type="Int32" Nullable="false" />
+    <Property Name="is_done" Type="Boolean" Nullable="false" />
+    <Property Name="exercise_number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="lesson" Relationship="Self.FK_exercises_lessons" FromRole="exercises" ToRole="lessons" />
+  </EntityType>
+  <EntityType Name="exercises_setup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="exercise_number" Type="Int32" Nullable="false" />
+    <Property Name="exercise_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="lesson_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="lessons_setup" Relationship="Self.FK_exercises_setup_lessons_setup" FromRole="exercises_setup" ToRole="lessons_setup" />
+    <NavigationProperty Name="syllables" Relationship="Self.FK_syllables_exercises_setup" FromRole="exercises_setup" ToRole="syllables" />
+    <NavigationProperty Name="words" Relationship="Self.FK_words_exercises_setup" FromRole="exercises_setup" ToRole="words" />
+  </EntityType>
+  <EntityType Name="lesson">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="is_done" Type="Boolean" Nullable="false" />
+    <Property Name="lesson_number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="exercises" Relationship="Self.FK_exercises_lessons" FromRole="lessons" ToRole="exercises" />
+    <NavigationProperty Name="user" Relationship="Self.FK_lessons_users" FromRole="lessons" ToRole="users" />
+  </EntityType>
+  <EntityType Name="lessons_setup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lesson_number" Type="Int32" Nullable="false" />
+    <Property Name="lesson_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="exercises_setup" Relationship="Self.FK_exercises_setup_lessons_setup" FromRole="lessons_setup" ToRole="exercises_setup" />
+  </EntityType>
+  <EntityType Name="syllable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="syllable_text" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="exercises_setup_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="exercises_setup" Relationship="Self.FK_syllables_exercises_setup" FromRole="syllables" ToRole="exercises_setup" />
+    <NavigationProperty Name="words" Relationship="Self.syllables_words" FromRole="syllables" ToRole="words" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="date_of_birth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="age_in_years" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="lessons" Relationship="Self.FK_lessons_users" FromRole="users" ToRole="lessons" />
+  </EntityType>
+  <EntityType Name="word">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="word_text" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="exercises_setup_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="exercises_setup" Relationship="Self.FK_words_exercises_setup" FromRole="words" ToRole="exercises_setup" />
+    <NavigationProperty Name="syllables" Relationship="Self.syllables_words" FromRole="words" ToRole="syllables" />
+    <Property Name="is_lesson_only" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_exercises_lessons">
+    <End Role="lessons" Type="Self.lesson" Multiplicity="1" />
+    <End Role="exercises" Type="Self.exercis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lessons">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="exercises">
+        <PropertyRef Name="lesson_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_exercises_setup_lessons_setup">
+    <End Role="lessons_setup" Type="Self.lessons_setup" Multiplicity="1" />
+    <End Role="exercises_setup" Type="Self.exercises_setup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lessons_setup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="exercises_setup">
+        <PropertyRef Name="lesson_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_syllables_exercises_setup">
+    <End Role="exercises_setup" Type="Self.exercises_setup" Multiplicity="1" />
+    <End Role="syllables" Type="Self.syllable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="exercises_setup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="syllables">
+        <PropertyRef Name="exercises_setup_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_words_exercises_setup">
+    <End Role="exercises_setup" Type="Self.exercises_setup" Multiplicity="1" />
+    <End Role="words" Type="Self.word" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="exercises_setup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="words">
+        <PropertyRef Name="exercises_setup_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lessons_users">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="lessons" Type="Self.lesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="lessons">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="syllables_words">
+    <End Role="syllables" Type="Self.syllable" Multiplicity="*" />
+    <End Role="words" Type="Self.word" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="CzytamAppEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="exercises" EntityType="Self.exercis" />
+    <EntitySet Name="exercises_setup" EntityType="Self.exercises_setup" />
+    <EntitySet Name="lessons" EntityType="Self.lesson" />
+    <EntitySet Name="lessons_setup" EntityType="Self.lessons_setup" />
+    <EntitySet Name="syllables" EntityType="Self.syllable" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="words" EntityType="Self.word" />
+    <AssociationSet Name="FK_exercises_lessons" Association="Self.FK_exercises_lessons">
+      <End Role="lessons" EntitySet="lessons" />
+      <End Role="exercises" EntitySet="exercises" />
+    </AssociationSet>
+    <AssociationSet Name="FK_exercises_setup_lessons_setup" Association="Self.FK_exercises_setup_lessons_setup">
+      <End Role="lessons_setup" EntitySet="lessons_setup" />
+      <End Role="exercises_setup" EntitySet="exercises_setup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_syllables_exercises_setup" Association="Self.FK_syllables_exercises_setup">
+      <End Role="exercises_setup" EntitySet="exercises_setup" />
+      <End Role="syllables" EntitySet="syllables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_words_exercises_setup" Association="Self.FK_words_exercises_setup">
+      <End Role="exercises_setup" EntitySet="exercises_setup" />
+      <End Role="words" EntitySet="words" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lessons_users" Association="Self.FK_lessons_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="lessons" EntitySet="lessons" />
+    </AssociationSet>
+    <AssociationSet Name="syllables_words" Association="Self.syllables_words">
+      <End Role="syllables" EntitySet="syllables" />
+      <End Role="words" EntitySet="words" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

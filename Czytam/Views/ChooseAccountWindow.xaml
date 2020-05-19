@@ -1,0 +1,33 @@
+﻿<Window x:Class="Czytam.Views.ChooseAccountWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Czytam.Views"
+        mc:Ignorable="d"
+        Icon="/Resources/Images/man.png"
+        Title="Wybierz konto" Height="800" Width="1000"    
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
+        </Grid.Background>
+        <Label Content="Wybierz konto" HorizontalAlignment="Center" Margin="200,50,200,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontSize="48" FontWeight="Bold" FontStyle="Italic" />
+
+        <ScrollViewer VerticalContentAlignment="Center" VerticalScrollBarVisibility="Auto" Height="500" Width="330" Margin="0,50,0,0" VerticalAlignment="Center">
+        <StackPanel x:Name="usersButtonsStackPanel" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="300"/>
+       </ScrollViewer>
+        
+        <Button Content="Cofnij" HorizontalAlignment="Right" Margin="0,0,100,100" VerticalAlignment="Bottom" Width="70" Height="40" Click="MainMenu" FontFamily="Nyala" FontSize="18">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+
+            </Button.Background>
+        </Button>
+
+
+    </Grid>
+</Window>

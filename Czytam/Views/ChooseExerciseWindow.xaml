@@ -1,0 +1,35 @@
+﻿<Window x:Class="Czytam.Views.ChooseExerciseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Czytam.Views"
+        mc:Ignorable="d"
+        Icon="/Resources/Images/man.png"
+        Title="Wybierz ćwiczenie" Height="800" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
+        </Grid.Background>
+        <Label Content="Wybierz ćwiczenie" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontWeight="Bold" FontStyle="Italic" FontSize="48"/>
+
+
+        <Button Style="{StaticResource backButton}" Click="BackButton_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <ScrollViewer VerticalContentAlignment="Center" VerticalScrollBarVisibility="Auto" Height="500" Width="330" Margin="0,0,0,0" VerticalAlignment="Center">
+            <StackPanel x:Name="excercisesButtonStackPanel" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" Width="auto" Margin="0,0,0,0" CanVerticallyScroll="True"/>
+
+
+        </ScrollViewer>
+
+    </Grid>
+</Window>

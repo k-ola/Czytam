@@ -50,8 +50,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,48 +79,78 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddAccount.xaml.cs">
-      <DependentUpon>AddAccount.xaml</DependentUpon>
+    <Compile Include="CzytamApp.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CzytamApp.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Ex1Desc.xaml.cs">
-      <DependentUpon>Ex1Desc.xaml</DependentUpon>
+    <Compile Include="CzytamApp.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CzytamApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Exercise1.xaml.cs">
-      <DependentUpon>Exercise1.xaml</DependentUpon>
+    <Compile Include="CzytamApp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CzytamApp.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Lesson1.xaml.cs">
-      <DependentUpon>Lesson1.xaml</DependentUpon>
+    <Compile Include="exercis.cs">
+      <DependentUpon>CzytamApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.cs" />
-    <Compile Include="ChooseEx.xaml.cs">
-      <DependentUpon>ChooseEx.xaml</DependentUpon>
+    <Compile Include="exercises_setup.cs">
+      <DependentUpon>CzytamApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="ChooseAcc.xaml.cs">
-      <DependentUpon>ChooseAcc.xaml</DependentUpon>
+    <Compile Include="Extensions\ButtonExtensions.cs" />
+    <Compile Include="Globals\GlobalMethods.cs" />
+    <Compile Include="Globals\GlobalVariables.cs" />
+    <Compile Include="lesson.cs">
+      <DependentUpon>CzytamApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="ChooseLesson.xaml.cs">
-      <DependentUpon>ChooseLesson.xaml</DependentUpon>
+    <Compile Include="lessons_setup.cs">
+      <DependentUpon>CzytamApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="ChooseModule.xaml.cs">
-      <DependentUpon>ChooseModule.xaml</DependentUpon>
+    <Compile Include="Repositories\ExerciseRepository.cs" />
+    <Compile Include="Repositories\ExercisesSetupRepository.cs" />
+    <Compile Include="Repositories\LessonRepository.cs" />
+    <Compile Include="Repositories\LessonsSetupRepository.cs" />
+    <Compile Include="Repositories\SyllableRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\WordRepository.cs" />
+    <Compile Include="Services\WordService.cs" />
+    <Compile Include="syllable.cs">
+      <DependentUpon>CzytamApp.tt</DependentUpon>
     </Compile>
-    <Page Include="AddAccount.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Ex1Desc.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Exercise1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Lesson1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>CzytamApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>CzytamApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddNewUserWindow.xaml.cs">
+      <DependentUpon>AddNewUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChooseAccountWindow.xaml.cs">
+      <DependentUpon>ChooseAccountWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChooseExerciseWindow.xaml.cs">
+      <DependentUpon>ChooseExerciseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChooseLessonWindow.xaml.cs">
+      <DependentUpon>ChooseLessonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChooseModuleWindow.xaml.cs">
+      <DependentUpon>ChooseModuleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExerciseWindow.xaml.cs">
+      <DependentUpon>ExerciseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LessonWindow.xaml.cs">
+      <DependentUpon>LessonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="word.cs">
+      <DependentUpon>CzytamApp.tt</DependentUpon>
+    </Compile>
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -119,28 +158,44 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ChooseEx.xaml">
+    <Page Include="Views\AddNewUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ChooseAcc.xaml">
+    <Page Include="Views\ChooseAccountWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ChooseLesson.xaml">
+    <Page Include="Views\ChooseExerciseWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ChooseModule.xaml">
+    <Page Include="Views\ChooseLessonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChooseModuleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExerciseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LessonWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\ExerciseService.cs" />
+    <Compile Include="Services\LessonService.cs" />
+    <Compile Include="Services\SyllableService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -158,6 +213,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="CzytamApp.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CzytamApp.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CzytamApp.edmx.diagram">
+      <DependentUpon>CzytamApp.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -165,24 +228,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\3438857.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\247.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\58930.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\multimedia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\left-arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\man.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -197,10 +242,128 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="sounds\la.mp3" />
-    <Content Include="sounds\ma.mp3" />
-    <Content Include="sounds\mi.mp3" />
-    <Content Include="sounds\ta.mp3" />
+    <Content Include="CzytamApp.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CzytamApp.Context.cs</LastGenOutput>
+      <DependentUpon>CzytamApp.edmx</DependentUpon>
+    </Content>
+    <Content Include="CzytamApp.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CzytamApp.edmx</DependentUpon>
+      <LastGenOutput>CzytamApp.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Resources\Images\3438857.jpg" />
+    <Resource Include="Resources\Images\man.png" />
+    <Resource Include="Resources\Images\ui.png" />
+    <Resource Include="Resources\Images\interface.png" />
+    <Content Include="Resources\Sounds\ba.mp3" />
+    <Content Include="Resources\Sounds\baca.mp3" />
+    <Content Include="Resources\Sounds\bada.mp3" />
+    <Content Include="Resources\Sounds\baty.mp3" />
+    <Content Include="Resources\Sounds\bi.mp3" />
+    <Content Include="Resources\Sounds\bity.mp3" />
+    <Content Include="Resources\Sounds\bo.mp3" />
+    <Content Include="Resources\Sounds\boki.mp3" />
+    <Content Include="Resources\Sounds\boli.mp3" />
+    <Content Include="Resources\Sounds\bu.mp3" />
+    <Content Include="Resources\Sounds\buda.mp3" />
+    <Content Include="Resources\Sounds\buki.mp3" />
+    <Content Include="Resources\Sounds\buty.mp3" />
+    <Content Include="Resources\Sounds\by.mp3" />
+    <Content Include="Resources\Sounds\byle.mp3" />
+    <Content Include="Resources\Sounds\byli.mp3" />
+    <Content Include="Resources\Sounds\ca.mp3" />
+    <Content Include="Resources\Sounds\cali.mp3" />
+    <Content Include="Resources\Sounds\ce.mp3" />
+    <Content Include="Resources\Sounds\cela.mp3" />
+    <Content Include="Resources\Sounds\co.mp3" />
+    <Content Include="Resources\Sounds\cu.mp3" />
+    <Content Include="Resources\Sounds\cuda.mp3" />
+    <Content Include="Resources\Sounds\cumy.mp3" />
+    <Content Include="Resources\Sounds\cy.mp3" />
+    <Content Include="Resources\Sounds\cyka.mp3" />
+    <Content Include="Resources\Sounds\da.mp3" />
+    <Content Include="Resources\Sounds\dama.mp3" />
+    <Content Include="Resources\Sounds\data.mp3" />
+    <Content Include="Resources\Sounds\de.mp3" />
+    <Content Include="Resources\Sounds\deko.mp3" />
+    <Content Include="Resources\Sounds\demo.mp3" />
+    <Content Include="Resources\Sounds\do.mp3" />
+    <Content Include="Resources\Sounds\doba.mp3" />
+    <Content Include="Resources\Sounds\dola.mp3" />
+    <Content Include="Resources\Sounds\domy.mp3" />
+    <Content Include="Resources\Sounds\du.mp3" />
+    <Content Include="Resources\Sounds\duma.mp3" />
+    <Content Include="Resources\Sounds\dy.mp3" />
+    <Content Include="Resources\Sounds\dymi.mp3" />
+    <Content Include="Resources\Sounds\ka.mp3" />
+    <Content Include="Resources\Sounds\ki.mp3" />
+    <Content Include="Resources\Sounds\kica.mp3" />
+    <Content Include="Resources\Sounds\kilo.mp3" />
+    <Content Include="Resources\Sounds\kita.mp3" />
+    <Content Include="Resources\Sounds\ko.mp3" />
+    <Content Include="Resources\Sounds\koce.mp3" />
+    <Content Include="Resources\Sounds\koty.mp3" />
+    <Content Include="Resources\Sounds\ku.mp3" />
+    <Content Include="Resources\Sounds\kuca.mp3" />
+    <Content Include="Resources\Sounds\kuka.mp3" />
+    <Content Include="Resources\Sounds\kula.mp3" />
+    <Content Include="Resources\Sounds\la.mp3" />
+    <Content Include="Resources\Sounds\laba.mp3" />
+    <Content Include="Resources\Sounds\lala.mp3" />
+    <Content Include="Resources\Sounds\lama.mp3" />
+    <Content Include="Resources\Sounds\lata.mp3" />
+    <Content Include="Resources\Sounds\lato.mp3" />
+    <Content Include="Resources\Sounds\le.mp3" />
+    <Content Include="Resources\Sounds\leki.mp3" />
+    <Content Include="Resources\Sounds\li.mp3" />
+    <Content Include="Resources\Sounds\lico.mp3" />
+    <Content Include="Resources\Sounds\limo.mp3" />
+    <Content Include="Resources\Sounds\lo.mp3" />
+    <Content Include="Resources\Sounds\lody.mp3" />
+    <Content Include="Resources\Sounds\loki.mp3" />
+    <Content Include="Resources\Sounds\Lola.mp3" />
+    <Content Include="Resources\Sounds\lu.mp3" />
+    <Content Include="Resources\Sounds\lubi.mp3" />
+    <Content Include="Resources\Sounds\luka.mp3" />
+    <Content Include="Resources\Sounds\lula.mp3" />
+    <Content Include="Resources\Sounds\luty.mp3" />
+    <Content Include="Resources\Sounds\ma.mp3" />
+    <Content Include="Resources\Sounds\maca.mp3" />
+    <Content Include="Resources\Sounds\maki.mp3" />
+    <Content Include="Resources\Sounds\mali.mp3" />
+    <Content Include="Resources\Sounds\mama.mp3" />
+    <Content Include="Resources\Sounds\mata.mp3" />
+    <Content Include="Resources\Sounds\me.mp3" />
+    <Content Include="Resources\Sounds\meta.mp3" />
+    <Content Include="Resources\Sounds\mi.mp3" />
+    <Content Include="Resources\Sounds\mile.mp3" />
+    <Content Include="Resources\Sounds\mimo.mp3" />
+    <Content Include="Resources\Sounds\mity.mp3" />
+    <Content Include="Resources\Sounds\mo.mp3" />
+    <Content Include="Resources\Sounds\moda.mp3" />
+    <Content Include="Resources\Sounds\mole.mp3" />
+    <Content Include="Resources\Sounds\molo.mp3" />
+    <Content Include="Resources\Sounds\my.mp3" />
+    <Content Include="Resources\Sounds\ta.mp3" />
+    <Content Include="Resources\Sounds\taca.mp3" />
+    <Content Include="Resources\Sounds\tama.mp3" />
+    <Content Include="Resources\Sounds\tata.mp3" />
+    <Content Include="Resources\Sounds\tato.mp3" />
+    <Content Include="Resources\Sounds\te.mp3" />
+    <Content Include="Resources\Sounds\teka.mp3" />
+    <Content Include="Resources\Sounds\to.mp3" />
+    <Content Include="Resources\Sounds\tomy.mp3" />
+    <Content Include="Resources\Sounds\tu.mp3" />
+    <Content Include="Resources\Sounds\tuba.mp3" />
+    <Content Include="Resources\Sounds\tuli.mp3" />
+    <Content Include="Resources\Sounds\ty.mp3" />
+    <Content Include="Resources\Sounds\tyka.mp3" />
+    <Content Include="Resources\Sounds\tyle.mp3" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

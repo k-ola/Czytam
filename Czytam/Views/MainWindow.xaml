@@ -1,0 +1,43 @@
+﻿<Window x:Class="Czytam.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Czytam"
+        mc:Ignorable="d"
+        Icon="/Resources/Images/man.png"
+        Title="Poczytajmy! Aplikacja wspomagająca naukę czytania." Height="800" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="0">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
+        </Grid.Background>
+
+        <Button Content="Wybierz konto" Margin="0,-200,0,0" Width="400" Click="ChooseAccountButton_Click" Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" RenderTransformOrigin="0.952,0.457" FontFamily="Nyala" FontSize="22">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Dodaj konto" Margin="0,100,0,0" Width="400" Height="100" Click="AddNewUserButton_Click" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Nyala" FontSize="22">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Wyjście" Margin="0,0,100,100" Width="70" Height="40" Click="ExitButton_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" FontFamily="Nyala" FontSize="18">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="Poczytajmy!" HorizontalAlignment="Center" Margin="230,50,230,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontSize="48" FontWeight="Bold" FontStyle="Italic" />
+
+    </Grid>
+</Window>

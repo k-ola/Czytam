@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CzytamAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="exercises">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="lesson_id" Type="int" Nullable="false" />
+          <Property Name="is_done" Type="bit" Nullable="false" />
+          <Property Name="exercise_number" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="exercises_setup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="exercise_number" Type="int" Nullable="false" />
+          <Property Name="exercise_description" Type="text" />
+          <Property Name="lesson_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lessons">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="is_done" Type="bit" Nullable="false" />
+          <Property Name="lesson_number" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lessons_setup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="lesson_number" Type="int" Nullable="false" />
+          <Property Name="lesson_description" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="syllables">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="syllable_text" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="exercises_setup_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CzytamApp.dbo.syllables_words' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="syllables_words">
+          <Key>
+            <PropertyRef Name="syllable_id" />
+            <PropertyRef Name="word_id" />
+          </Key>
+          <Property Name="syllable_id" Type="int" Nullable="false" />
+          <Property Name="word_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="date_of_birth" Type="date" Nullable="false" />
+          <Property Name="age_in_years" Type="int" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="words">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="word_text" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="exercises_setup_id" Type="int" Nullable="false" />
+          <Property Name="is_lesson_only" Type="bit" />
+        </EntityType>
+        <Association Name="FK_exercises_lessons">
+          <End Role="lessons" Type="Self.lessons" Multiplicity="1" />
+          <End Role="exercises" Type="Self.exercises" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lessons">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="exercises">
+              <PropertyRef Name="lesson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_exercises_setup_lessons_setup">
+          <End Role="lessons_setup" Type="Self.lessons_setup" Multiplicity="1" />
+          <End Role="exercises_setup" Type="Self.exercises_setup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lessons_setup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="exercises_setup">
+              <PropertyRef Name="lesson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lessons_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="lessons" Type="Self.lessons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="lessons">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_syllables_exercises_setup">
+          <End Role="exercises_setup" Type="Self.exercises_setup" Multiplicity="1" />
+          <End Role="syllables" Type="Self.syllables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="exercises_setup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="syllables">
+              <PropertyRef Name="exercises_setup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_syllables_words_syllables">
+          <End Role="syllables" Type="Self.syllables" Multiplicity="1" />
+          <End Role="syllables_words" Type="Self.syllables_words" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="syllables">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="syllables_words">
+              <PropertyRef Name="syllable_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_syllables_words_words">
+          <End Role="words" Type="Self.words" Multiplicity="1" />
+          <End Role="syllables_words" Type="Self.syllables_words" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="words">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="syllables_words">
+              <PropertyRef Name="word_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_words_exercises_setup">
+          <End Role="exercises_setup" Type="Self.exercises_setup" Multiplicity="1" />
+          <End Role="words" Type="Self.words" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="exercises_setup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="words">
+              <PropertyRef Name="exercises_setup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CzytamAppModelStoreContainer">
+          <EntitySet Name="exercises" EntityType="Self.exercises" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="exercises_setup" EntityType="Self.exercises_setup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lessons" EntityType="Self.lessons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lessons_setup" EntityType="Self.lessons_setup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="syllables" EntityType="Self.syllables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="words" EntityType="Self.words" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="syllables_words" EntityType="Self.syllables_words" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [syllables_words].[syllable_id] AS [syllable_id], 
+    [syllables_words].[word_id] AS [word_id]
+    FROM [dbo].[syllables_words] AS [syllables_words]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_exercises_lessons" Association="Self.FK_exercises_lessons">
+            <End Role="lessons" EntitySet="lessons" />
+            <End Role="exercises" EntitySet="exercises" />
+          </AssociationSet>
+          <AssociationSet Name="FK_exercises_setup_lessons_setup" Association="Self.FK_exercises_setup_lessons_setup">
+            <End Role="lessons_setup" EntitySet="lessons_setup" />
+            <End Role="exercises_setup" EntitySet="exercises_setup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lessons_users" Association="Self.FK_lessons_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="lessons" EntitySet="lessons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_syllables_exercises_setup" Association="Self.FK_syllables_exercises_setup">
+            <End Role="exercises_setup" EntitySet="exercises_setup" />
+            <End Role="syllables" EntitySet="syllables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_syllables_words_syllables" Association="Self.FK_syllables_words_syllables">
+            <End Role="syllables" EntitySet="syllables" />
+            <End Role="syllables_words" EntitySet="syllables_words" />
+          </AssociationSet>
+          <AssociationSet Name="FK_syllables_words_words" Association="Self.FK_syllables_words_words">
+            <End Role="words" EntitySet="words" />
+            <End Role="syllables_words" EntitySet="syllables_words" />
+          </AssociationSet>
+          <AssociationSet Name="FK_words_exercises_setup" Association="Self.FK_words_exercises_setup">
+            <End Role="exercises_setup" EntitySet="exercises_setup" />
+            <End Role="words" EntitySet="words" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CzytamAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="exercis">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lesson_id" Type="Int32" Nullable="false" />
+          <Property Name="is_done" Type="Boolean" Nullable="false" />
+          <Property Name="exercise_number" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="lesson" Relationship="Self.FK_exercises_lessons" FromRole="exercises" ToRole="lessons" />
+        </EntityType>
+        <EntityType Name="exercises_setup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="exercise_number" Type="Int32" Nullable="false" />
+          <Property Name="exercise_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="lesson_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="lessons_setup" Relationship="Self.FK_exercises_setup_lessons_setup" FromRole="exercises_setup" ToRole="lessons_setup" />
+          <NavigationProperty Name="syllables" Relationship="Self.FK_syllables_exercises_setup" FromRole="exercises_setup" ToRole="syllables" />
+          <NavigationProperty Name="words" Relationship="Self.FK_words_exercises_setup" FromRole="exercises_setup" ToRole="words" />
+        </EntityType>
+        <EntityType Name="lesson">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="is_done" Type="Boolean" Nullable="false" />
+          <Property Name="lesson_number" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="exercises" Relationship="Self.FK_exercises_lessons" FromRole="lessons" ToRole="exercises" />
+          <NavigationProperty Name="user" Relationship="Self.FK_lessons_users" FromRole="lessons" ToRole="users" />
+        </EntityType>
+        <EntityType Name="lessons_setup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lesson_number" Type="Int32" Nullable="false" />
+          <Property Name="lesson_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="exercises_setup" Relationship="Self.FK_exercises_setup_lessons_setup" FromRole="lessons_setup" ToRole="exercises_setup" />
+        </EntityType>
+        <EntityType Name="syllable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="syllable_text" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="exercises_setup_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="exercises_setup" Relationship="Self.FK_syllables_exercises_setup" FromRole="syllables" ToRole="exercises_setup" />
+          <NavigationProperty Name="words" Relationship="Self.syllables_words" FromRole="syllables" ToRole="words" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date_of_birth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="age_in_years" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="lessons" Relationship="Self.FK_lessons_users" FromRole="users" ToRole="lessons" />
+        </EntityType>
+        <EntityType Name="word">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="word_text" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="exercises_setup_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="exercises_setup" Relationship="Self.FK_words_exercises_setup" FromRole="words" ToRole="exercises_setup" />
+          <NavigationProperty Name="syllables" Relationship="Self.syllables_words" FromRole="words" ToRole="syllables" />
+          <Property Name="is_lesson_only" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_exercises_lessons">
+          <End Role="lessons" Type="Self.lesson" Multiplicity="1" />
+          <End Role="exercises" Type="Self.exercis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lessons">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="exercises">
+              <PropertyRef Name="lesson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_exercises_setup_lessons_setup">
+          <End Role="lessons_setup" Type="Self.lessons_setup" Multiplicity="1" />
+          <End Role="exercises_setup" Type="Self.exercises_setup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lessons_setup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="exercises_setup">
+              <PropertyRef Name="lesson_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_syllables_exercises_setup">
+          <End Role="exercises_setup" Type="Self.exercises_setup" Multiplicity="1" />
+          <End Role="syllables" Type="Self.syllable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="exercises_setup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="syllables">
+              <PropertyRef Name="exercises_setup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_words_exercises_setup">
+          <End Role="exercises_setup" Type="Self.exercises_setup" Multiplicity="1" />
+          <End Role="words" Type="Self.word" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="exercises_setup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="words">
+              <PropertyRef Name="exercises_setup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lessons_users">
+          <End Role="users" Type="Self.user" Multiplicity="1" />
+          <End Role="lessons" Type="Self.lesson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="lessons">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="syllables_words">
+          <End Role="syllables" Type="Self.syllable" Multiplicity="*" />
+          <End Role="words" Type="Self.word" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="CzytamAppEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="exercises" EntityType="Self.exercis" />
+          <EntitySet Name="exercises_setup" EntityType="Self.exercises_setup" />
+          <EntitySet Name="lessons" EntityType="Self.lesson" />
+          <EntitySet Name="lessons_setup" EntityType="Self.lessons_setup" />
+          <EntitySet Name="syllables" EntityType="Self.syllable" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="words" EntityType="Self.word" />
+          <AssociationSet Name="FK_exercises_lessons" Association="Self.FK_exercises_lessons">
+            <End Role="lessons" EntitySet="lessons" />
+            <End Role="exercises" EntitySet="exercises" />
+          </AssociationSet>
+          <AssociationSet Name="FK_exercises_setup_lessons_setup" Association="Self.FK_exercises_setup_lessons_setup">
+            <End Role="lessons_setup" EntitySet="lessons_setup" />
+            <End Role="exercises_setup" EntitySet="exercises_setup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_syllables_exercises_setup" Association="Self.FK_syllables_exercises_setup">
+            <End Role="exercises_setup" EntitySet="exercises_setup" />
+            <End Role="syllables" EntitySet="syllables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_words_exercises_setup" Association="Self.FK_words_exercises_setup">
+            <End Role="exercises_setup" EntitySet="exercises_setup" />
+            <End Role="words" EntitySet="words" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lessons_users" Association="Self.FK_lessons_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="lessons" EntitySet="lessons" />
+          </AssociationSet>
+          <AssociationSet Name="syllables_words" Association="Self.syllables_words">
+            <End Role="syllables" EntitySet="syllables" />
+            <End Role="words" EntitySet="words" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CzytamAppModelStoreContainer" CdmEntityContainer="CzytamAppEntities1">
+          <EntitySetMapping Name="exercises">
+            <EntityTypeMapping TypeName="CzytamAppModel.exercis">
+              <MappingFragment StoreEntitySet="exercises">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="lesson_id" ColumnName="lesson_id" />
+                <ScalarProperty Name="is_done" ColumnName="is_done" />
+                <ScalarProperty Name="exercise_number" ColumnName="exercise_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="exercises_setup">
+            <EntityTypeMapping TypeName="CzytamAppModel.exercises_setup">
+              <MappingFragment StoreEntitySet="exercises_setup">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="exercise_number" ColumnName="exercise_number" />
+                <ScalarProperty Name="exercise_description" ColumnName="exercise_description" />
+                <ScalarProperty Name="lesson_id" ColumnName="lesson_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lessons">
+            <EntityTypeMapping TypeName="CzytamAppModel.lesson">
+              <MappingFragment StoreEntitySet="lessons">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="is_done" ColumnName="is_done" />
+                <ScalarProperty Name="lesson_number" ColumnName="lesson_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lessons_setup">
+            <EntityTypeMapping TypeName="CzytamAppModel.lessons_setup">
+              <MappingFragment StoreEntitySet="lessons_setup">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="lesson_number" ColumnName="lesson_number" />
+                <ScalarProperty Name="lesson_description" ColumnName="lesson_description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="syllables">
+            <EntityTypeMapping TypeName="CzytamAppModel.syllable">
+              <MappingFragment StoreEntitySet="syllables">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="syllable_text" ColumnName="syllable_text" />
+                <ScalarProperty Name="exercises_setup_id" ColumnName="exercises_setup_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CzytamAppModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="CzytamAppModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+                <ScalarProperty Name="age_in_years" ColumnName="age_in_years" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="words">
+            <EntityTypeMapping TypeName="CzytamAppModel.word">
+              <MappingFragment StoreEntitySet="words">
+                <ScalarProperty Name="is_lesson_only" ColumnName="is_lesson_only" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="word_text" ColumnName="word_text" />
+                <ScalarProperty Name="exercises_setup_id" ColumnName="exercises_setup_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="syllables_words" TypeName="CzytamAppModel.syllables_words" StoreEntitySet="syllables_words">
+            <EndProperty Name="syllables">
+              <ScalarProperty Name="id" ColumnName="syllable_id" />
+            </EndProperty>
+            <EndProperty Name="words">
+              <ScalarProperty Name="id" ColumnName="word_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

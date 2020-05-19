@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CzytamAppModelStoreContainer" CdmEntityContainer="CzytamAppEntities1">
+    <EntitySetMapping Name="exercises">
+      <EntityTypeMapping TypeName="CzytamAppModel.exercis">
+        <MappingFragment StoreEntitySet="exercises">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lesson_id" ColumnName="lesson_id" />
+          <ScalarProperty Name="is_done" ColumnName="is_done" />
+          <ScalarProperty Name="exercise_number" ColumnName="exercise_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="exercises_setup">
+      <EntityTypeMapping TypeName="CzytamAppModel.exercises_setup">
+        <MappingFragment StoreEntitySet="exercises_setup">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="exercise_number" ColumnName="exercise_number" />
+          <ScalarProperty Name="exercise_description" ColumnName="exercise_description" />
+          <ScalarProperty Name="lesson_id" ColumnName="lesson_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lessons">
+      <EntityTypeMapping TypeName="CzytamAppModel.lesson">
+        <MappingFragment StoreEntitySet="lessons">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="is_done" ColumnName="is_done" />
+          <ScalarProperty Name="lesson_number" ColumnName="lesson_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lessons_setup">
+      <EntityTypeMapping TypeName="CzytamAppModel.lessons_setup">
+        <MappingFragment StoreEntitySet="lessons_setup">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lesson_number" ColumnName="lesson_number" />
+          <ScalarProperty Name="lesson_description" ColumnName="lesson_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="syllables">
+      <EntityTypeMapping TypeName="CzytamAppModel.syllable">
+        <MappingFragment StoreEntitySet="syllables">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="syllable_text" ColumnName="syllable_text" />
+          <ScalarProperty Name="exercises_setup_id" ColumnName="exercises_setup_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CzytamAppModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="CzytamAppModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+          <ScalarProperty Name="age_in_years" ColumnName="age_in_years" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="words">
+      <EntityTypeMapping TypeName="CzytamAppModel.word">
+        <MappingFragment StoreEntitySet="words">
+          <ScalarProperty Name="is_lesson_only" ColumnName="is_lesson_only" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="word_text" ColumnName="word_text" />
+          <ScalarProperty Name="exercises_setup_id" ColumnName="exercises_setup_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="syllables_words" TypeName="CzytamAppModel.syllables_words" StoreEntitySet="syllables_words">
+      <EndProperty Name="syllables">
+        <ScalarProperty Name="id" ColumnName="syllable_id" />
+      </EndProperty>
+      <EndProperty Name="words">
+        <ScalarProperty Name="id" ColumnName="word_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

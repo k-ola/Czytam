@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="91ada825500045c8b9d9344dfef3c22d" Name="Diagram1">
+        <EntityTypeShape EntityType="CzytamAppModel.exercis" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CzytamAppModel.exercises_setup" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CzytamAppModel.lesson" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CzytamAppModel.lessons_setup" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CzytamAppModel.syllable" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CzytamAppModel.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CzytamAppModel.user" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CzytamAppModel.word" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="CzytamAppModel.FK_exercises_lessons" ManuallyRouted="false" />
+        <AssociationConnector Association="CzytamAppModel.FK_exercises_setup_lessons_setup" ManuallyRouted="false" />
+        <AssociationConnector Association="CzytamAppModel.FK_syllables_exercises_setup" ManuallyRouted="false" />
+        <AssociationConnector Association="CzytamAppModel.FK_words_exercises_setup" ManuallyRouted="false" />
+        <AssociationConnector Association="CzytamAppModel.FK_lessons_users" ManuallyRouted="false" />
+        <AssociationConnector Association="CzytamAppModel.syllables_words" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
