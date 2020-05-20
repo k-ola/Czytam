@@ -53,7 +53,7 @@ namespace Czytam.Views
             PrepareSyllablesAndWordsTabs();
         }
 
-        // TODO do przeniesienia do servisu!!!!!!!!!!
+        
         private void PrepareSyllablesAndWordsTabs()
         {
             int lessonSetupId = _lessonService.GetLessonSetupIdByLessonNumber(_lessonNumber);
@@ -157,8 +157,8 @@ namespace Czytam.Views
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            ChooseLessonWindow chooseLessonWindow = new ChooseLessonWindow(_user);
-            chooseLessonWindow.Show();
+            ChooseModuleWindow chooseModuleWindow = new ChooseModuleWindow(_user);
+            chooseModuleWindow.Show();
             this.Close();
         }
 

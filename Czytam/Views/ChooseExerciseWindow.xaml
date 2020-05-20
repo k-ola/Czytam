@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:Czytam.Views"
         mc:Ignorable="d"
         Icon="/Resources/Images/man.png"
-        Title="Wybierz ćwiczenie" Height="800" Width="1000"
-        WindowStartupLocation="CenterScreen">
+        Title="Wybierz ćwiczenie" MinHeight="800" MinWidth="1000"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanResize">
+   
+    
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
@@ -23,7 +25,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <ScrollViewer VerticalContentAlignment="Center" VerticalScrollBarVisibility="Auto" Height="500" Width="330" Margin="0,0,0,0" VerticalAlignment="Center">
+        <ScrollViewer VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Auto" Height="500" Width="330" Margin="0,0,0,0" VerticalAlignment="Stretch"                       >
             <StackPanel x:Name="excercisesButtonStackPanel" 
                     HorizontalAlignment="Center" 
                     VerticalAlignment="Center" Width="auto" Margin="0,0,0,0" CanVerticallyScroll="True"/>

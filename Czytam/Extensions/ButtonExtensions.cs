@@ -42,7 +42,6 @@ namespace Czytam.Extensions
             linearGradientBrush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString("Violet"), 0));
             linearGradientBrush.GradientStops.Add(new GradientStop((Color)ColorConverter.ConvertFromString("#FF0F5FAE"), 1));
             button.Background = linearGradientBrush;
-            button.Content = "Odtwórz";
             button.FontFamily = new FontFamily("Nyala");
             button.FontSize = 22;
             var margin = new Thickness();

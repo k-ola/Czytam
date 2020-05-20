@@ -49,13 +49,20 @@ namespace Czytam.Views
         }
 
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            ChooseAccountWindow chooseAccountWindow = new ChooseAccountWindow();
-            chooseAccountWindow.Show();
+            this.Close();
+        }
+
+        private void ChangeAccountButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow changeAccount = new MainWindow();
+            changeAccount.Show();
             this.Close();
         }
 
         #endregion
+
+
     }
 }

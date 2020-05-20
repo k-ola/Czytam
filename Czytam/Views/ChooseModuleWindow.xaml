@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:Czytam.Views"
         mc:Ignorable="d"
         Icon="/Resources/Images/man.png"
-        Title="Wybierz moduł" Height="800" Width="1000"
-        WindowStartupLocation="CenterScreen">
+        Title="Wybierz moduł" MinHeight="800" MinWidth="1000"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanResize">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
         </Grid.Background>
         <Label Content="Wybierz moduł " HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Height="90" FontSize="48" FontFamily="Segoe Script" FontStyle="Italic" FontWeight="Bold" Width="430"/>
-        <Button Content="Lekcje" Margin="0,-200,0,0" Width="400" Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.952,0.457" FontFamily="Nyala" FontSize="22" Click="ChooseLessonButton_Click">
+        <Button Content="Lekcje" Margin="0,-200,0,0" Width="400" Height="100" VerticalAlignment="Stretch" HorizontalAlignment="Center" RenderTransformOrigin="0.952,0.457" FontFamily="Nyala" FontSize="22" Click="ChooseLessonButton_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
                     <GradientStop Color="Violet" Offset="0"/>
@@ -29,7 +29,15 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Cofnij" Margin="0,0,100,100" Width="70" Height="40"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" FontFamily="Nyala" FontSize="18" Click="BackButton_Click">
+        <Button Content="Wyjście" Margin="0,0,100,100" Width="70" Height="40" Click="ExitButton_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" FontFamily="Nyala" FontSize="18">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                    <GradientStop Color="Violet" Offset="0"/>
+                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Zmień konto" Margin="100,0,0,100" Width="100" Height="40" Click="ChangeAccountButton_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1" FontFamily="Nyala" FontSize="18">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
                     <GradientStop Color="Violet" Offset="0"/>

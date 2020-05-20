@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:Czytam.Views"
         Icon="/Resources/Images/man.png"
         mc:Ignorable="d"
-        Title="LessonWindow" Height="800" Width="1000"
-        WindowStartupLocation="CenterScreen">
+        Title="LessonWindow" MinHeight="800" MinWidth="1000"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanResize">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
         </Grid.Background>
-        <TabControl HorizontalAlignment="Center" Height="800" VerticalAlignment="Top" Width="1000">
+        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinWidth="1000" MinHeight="800">
             <TabItem x:Name="descriptionTab" Header="Opis lekcji" Background="Violet" FontFamily="Nyala" FontSize="22" HorizontalAlignment="Center">
                 <Grid>
                     <Grid.Background>
@@ -29,7 +29,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                     </Button>
-                    <Button Style="{StaticResource backButton}" Click="BackButton_Click"  />
+                    <Button Style="{StaticResource backButton}" Click="BackButton_Click" Content="Zakończ" />
                 </Grid>
             </TabItem>
             <TabItem x:Name="syllablesTab" Header="Sylaby" Background="Violet" FontFamily="Nyala" FontSize="22" HorizontalAlignment="Center">

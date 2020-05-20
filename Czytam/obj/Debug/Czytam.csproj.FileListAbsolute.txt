@@ -23,6 +23,13 @@ D:\!!!_DANE_NIE_USUWAC_!!!\Desktop\WSIiZ\SemestrVI\Inżynieria oprogramowania\pr
 D:\!!!_DANE_NIE_USUWAC_!!!\Desktop\WSIiZ\SemestrVI\Inżynieria oprogramowania\projekt\Czytam\Czytam\obj\Debug\Czytam.exe
 D:\!!!_DANE_NIE_USUWAC_!!!\Desktop\WSIiZ\SemestrVI\Inżynieria oprogramowania\projekt\Czytam\Czytam\obj\Debug\Czytam.pdb
 D:\!!!_DANE_NIE_USUWAC_!!!\Desktop\WSIiZ\SemestrVI\Inżynieria oprogramowania\projekt\Czytam\Czytam\obj\Debug\Czytam.csprojAssemblyReference.cache
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.exe.config
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.exe
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.pdb
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\EntityFramework.dll
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\EntityFramework.xml
+C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Views\MainWindow.g.cs
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Views\AddNewUserWindow.g.cs
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Views\ChooseAccountWindow.g.cs
@@ -35,13 +42,6 @@ C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\App.g.cs
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam_Content.g.cs
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam_MarkupCompile.cache
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Czytam_MarkupCompile.lref
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.exe.config
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.exe
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\Czytam.pdb
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\EntityFramework.dll
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\EntityFramework.xml
-C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\App.baml
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Views\MainWindow.baml
 C:\Users\Ola\source\repos\k-ola\Czytam\Czytam\obj\Debug\Views\AddNewUserWindow.baml

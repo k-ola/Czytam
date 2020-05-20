@@ -35,6 +35,7 @@ namespace Czytam.Views
         private const string _defaultSyllablesTextBoxText = "Tu pojawią się sylaby, które wybrałeś.";
         private int _wordsToGuessCount = -1;
         private int _wordsAlreadyGuessedCount = 0;
+        private IList<string> syllables = new List<string>();
 
         public ExerciseWindow(user user, int exerciseNumber, bool isOpenedFromModuleWindow = false)
         {
@@ -141,6 +142,8 @@ namespace Czytam.Views
                 {
                     MessageBox.Show(this, "Brawo! Zapisałeś poprawnie wszystkie słowa. \n Możemy teraz przejść do następnego ćwiczenia.");
                     this.nextExerciseButton.IsEnabled = true;
+                    this.nextExerciseButton.Visibility = Visibility.Visible;
+               
                 }
                 else if (_exerciseService.GetNextExercisesFromLesson(_user, _exerciseNumber).Count == 0)
                 {
@@ -164,12 +167,13 @@ namespace Czytam.Views
             {
                 if (_exerciseService.GetNextExercises(_user, _exerciseNumber).Count > 0)
                 {
-                    MessageBox.Show(this, "Brawo! Zgadłeś wszystkie słowa. \n Możemy teraz przejść do następnego ćwiczenia.");
+                    MessageBox.Show(this, "Brawo! Zgadłeś wszystkie słowa. \nMożemy teraz przejść do następnego ćwiczenia.");
                     this.nextExerciseButton.IsEnabled = true;
+                    this.nextExerciseButton.Visibility = Visibility.Visible;
                 }
                 else if (_exerciseService.GetNextExercises(_user, _exerciseNumber).Count == 0)
                 {
-                    MessageBox.Show(this, "Niestety, to już wszystkie ćwiczenia");
+                    MessageBox.Show(this, "Niestety, to już wszystkie ćwiczenia.");
                 }
 
                 isDone = true;
@@ -177,22 +181,39 @@ namespace Czytam.Views
             return isDone;
         }
 
+
+        private bool CheckIfListNotEmpty()
+        {
+            bool isEmpty = false;
+            if (syllables.Count > 0)
+            {
+                this.deleteButton.Visibility = Visibility.Visible;
+                this.deleteButton.IsEnabled = true;
+            }
+            return isEmpty;
+        }
+
+
+
         #region Events
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            ChooseExerciseWindow chooseExerciseWindow;
+            ChooseModuleWindow chooseModuleWindow;
 
             if (_isOpenedFromModuleWindow)
             {
-                chooseExerciseWindow = new ChooseExerciseWindow(_user, true);
+                chooseModuleWindow = new ChooseModuleWindow(_user);
+                    //(_user, true);
             }
             else
             {
-                chooseExerciseWindow = new ChooseExerciseWindow(_user, _exerciseNumber);
-            }
+                chooseModuleWindow = new ChooseModuleWindow(_user);
+                    //(_user, _exerciseNumber);
+            } 
+            
 
-            chooseExerciseWindow.Show();
+            chooseModuleWindow.Show();
             this.Close();
         }
 
@@ -210,16 +231,18 @@ namespace Czytam.Views
 
                 if (!CheckIfExerciseDone())
                 {
-                    MessageBox.Show(this, "Brawo! \n Czas na kolejne słowo!");
+                    MessageBox.Show(this, "Brawo! \nCzas na kolejne słowo!");
                 }
             }
             else
             {
-                MessageBox.Show(this, "Niestety, to nie te sylaby. \n Spróbuj raz jeszcze.");
+                MessageBox.Show(this, "Niestety, to nie te sylaby. \nSpróbuj raz jeszcze.");
             }
 
             this.syllablesTextBox.Text = _defaultSyllablesTextBoxText;
             _isTooltipTextCleared = false;
+            syllables.Clear();
+            this.deleteButton.Visibility = Visibility.Hidden;
         }
 
 
@@ -236,6 +259,10 @@ namespace Czytam.Views
                 this.syllablesTextBox.Text = syllableText;
                 _isTooltipTextCleared = true;
             }
+
+            syllables.Add(syllableText);
+
+            CheckIfListNotEmpty();
         }
 
 
@@ -260,6 +287,34 @@ namespace Czytam.Views
             lessonWindow.Show();
             this.Close();
         }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+           if(syllables.Count>0)
+            {
+                string syllableToRemove = syllables[syllables.Count - 1];
+
+                if (this.syllablesTextBox.Text.Equals(syllableToRemove))
+                {
+                    this.syllablesTextBox.Text = _defaultSyllablesTextBoxText;
+                    syllables.Clear();
+                }
+                else
+                {
+                    this.syllablesTextBox.Text = this.syllablesTextBox.Text.Substring(0,this.syllablesTextBox.Text.Length - syllableToRemove.Length);
+                    syllables.RemoveAt(syllables.Count - 1);
+                }
+                
+                if (syllables.Count==0)
+                {
+                    this.syllablesTextBox.Text = _defaultSyllablesTextBoxText;
+                    _isTooltipTextCleared = false;
+                    this.deleteButton.Visibility = Visibility.Hidden;
+                }
+                
+            }
+        }
+
 
         #endregion
     }

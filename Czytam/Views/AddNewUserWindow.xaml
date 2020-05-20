@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Czytam.Views"
         mc:Ignorable="d"
         Icon="/Resources/Images/man.png"
-        Title="Dodaj nowego Czytelnika" Height="800" Width="1000"    
-        WindowStartupLocation="CenterScreen">
+        Title="Dodaj nowego Czytelnika" MinHeight="800" MinWidth="1000"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanResize">
 
         <Grid>
             <Grid.Background>

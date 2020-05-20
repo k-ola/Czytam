@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Czytam.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,25 @@ namespace Czytam.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        private UserService _userService;
+        
         public MainWindow()
         {
+            _userService = new UserService();
             InitializeComponent();
+            PrepareUserButton();
         }
 
+        private void PrepareUserButton()
+        {
+            var users = _userService.ReadAllUsers();
+
+            if (users.Any())
+            {
+                this.chooseAccountButton.IsEnabled = true;
+                this.chooseAccountButton.Visibility = Visibility.Visible;
+            }
+        }
 
         #region Events
 
@@ -44,10 +59,7 @@ namespace Czytam.Views
         }
 
 
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+        
 
         #endregion
     }
