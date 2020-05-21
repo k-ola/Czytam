@@ -8,29 +8,16 @@
         Icon="/Resources/Images/man.png"
         Title="Wybierz ćwiczenie" MinHeight="800" MinWidth="1000"
         WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanResize">
-   
-    
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
-        </Grid.Background>
-        <Label Content="Wybierz ćwiczenie" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontWeight="Bold" FontStyle="Italic" FontSize="48"/>
 
 
-        <Button Style="{StaticResource backButton}" Click="BackButton_Click" >
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
-                    <GradientStop Color="Violet" Offset="0"/>
-                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+    <Grid Style="{StaticResource generalGrid}">
+        <Label Style="{StaticResource titleLabel}" Content="Wybierz ćwiczenie"/>
+        <Button Style="{StaticResource backButton}" Click="BackButton_Click" />
+
         <ScrollViewer VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Auto" Height="500" Width="330" Margin="0,0,0,0" VerticalAlignment="Stretch"                       >
             <StackPanel x:Name="excercisesButtonStackPanel" 
                     HorizontalAlignment="Center" 
                     VerticalAlignment="Center" Width="auto" Margin="0,0,0,0" CanVerticallyScroll="True"/>
-
-
         </ScrollViewer>
 
     </Grid>

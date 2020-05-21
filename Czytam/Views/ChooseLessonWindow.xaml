@@ -8,11 +8,8 @@
         mc:Ignorable="d"
         Title="Wybierz lekcję" MinHeight="800" MinWidth="1000"
         WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanResize">
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
-        </Grid.Background>
-
+    <Grid Style="{StaticResource generalGrid}">
+        
         <Label Style="{StaticResource titleLabel}" Content="Wybierz lekcję"/>
 
         <Button Style="{StaticResource backButton}" Click="BackButton_Click" />

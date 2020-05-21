@@ -8,26 +8,14 @@
         Icon="/Resources/Images/man.png"
         Title="Wybierz konto" MinHeight="800" MinWidth="1000"
         WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanResize">
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
-        </Grid.Background>
-        <Label Content="Wybierz konto" HorizontalAlignment="Center" Margin="200,50,200,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontSize="48" FontWeight="Bold" FontStyle="Italic" />
+    <Grid Style="{StaticResource generalGrid}">
+        <Label Style="{StaticResource titleLabel}" Content="Wybierz konto" />
 
         <ScrollViewer VerticalContentAlignment="Center" VerticalScrollBarVisibility="Auto" Height="500" Width="330" Margin="0,50,0,0" VerticalAlignment="Center">
         <StackPanel x:Name="usersButtonsStackPanel" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="300"/>
        </ScrollViewer>
+
+        <Button Style="{StaticResource backButton}" Click="MainMenu" />
         
-        <Button Content="Cofnij" HorizontalAlignment="Right" Margin="0,0,100,100" VerticalAlignment="Bottom" Width="70" Height="40" Click="MainMenu" FontFamily="Nyala" FontSize="18">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
-                    <GradientStop Color="Violet" Offset="0"/>
-                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
-                </LinearGradientBrush>
-
-            </Button.Background>
-        </Button>
-
-
     </Grid>
 </Window>

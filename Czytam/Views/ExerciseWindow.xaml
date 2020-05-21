@@ -8,14 +8,11 @@
         mc:Ignorable="d"
         Title="Ćwiczenie" MinHeight="800" MinWidth="1000"
         WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanResize">
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
-        </Grid.Background>
+    <Grid Style="{StaticResource generalGrid}">
         <Label Style="{StaticResource titleLabel}" x:Name="exerciseNumberLabel" />
         
-        <WrapPanel Orientation="Horizontal" x:Name="syllablesButtonsStackPanel" HorizontalAlignment="Center" Height="100" 
-                                 VerticalAlignment="Top" Width="auto" Margin="0,190,0,0" />
+        <WrapPanel Orientation="Horizontal" x:Name="syllablesButtonsStackPanel" HorizontalAlignment="Center" Height="110" 
+                                 VerticalAlignment="Top" Width="auto" Margin="120,190,120,0" />
         <Button Style="{StaticResource nextExerciseButton}" x:Name="nextExerciseButton" Click="NextExerciseButton_Click" Visibility="Hidden"/>
 
         <Button Style="{StaticResource backButton}" Click="BackButton_Click" Content="Zakończ"  />
@@ -24,8 +21,8 @@
         <Button Style="{StaticResource nextLessonButton}" x:Name="nextLessonButton" Visibility="Hidden" Click="NextLessonButton_Click"/>
         
         
-            <TextBlock x:Name="exerciseDescriptionTextBlock" HorizontalAlignment="center" Height="auto" TextWrapping="Wrap" VerticalAlignment="Top"  Margin="0,290,0,0" Width="700" TextAlignment="center" FontFamily="Nyala" FontSize="24"/>
-            <TextBlock x:Name="syllablesTextBox" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Tu pojawią się sylaby, które wybrałeś." VerticalAlignment="Top" Height="80" TextAlignment="Center" Background="Violet" Padding="10,25,10,15" Margin="0,490,0,0" FontFamily="Nyala" FontSize="28" Width="500"/>
+            <TextBlock x:Name="exerciseDescriptionTextBlock" HorizontalAlignment="center" Height="auto" TextWrapping="Wrap" VerticalAlignment="Top"  Margin="0,300,0,0" Width="700" TextAlignment="center" FontFamily="Nyala" FontSize="24"/>
+            <TextBlock x:Name="syllablesTextBox" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Tu pojawią się sylaby, które wybrałeś." VerticalAlignment="Top" Height="80" TextAlignment="Center" Background="Violet" Opacity="0.8" Padding="10,25,10,15" Margin="0,490,0,0" FontFamily="Nyala" FontSize="28" Width="500"/>
             <Button Style="{StaticResource checkButton}" x:Name="checkButton" Click="CheckButton_Click"/>
         <Button Style="{StaticResource deleteButton}" x:Name="deleteButton" Click="DeleteButton_Click" Visibility="Hidden" IsEnabled="False" />
             

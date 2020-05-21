@@ -6,31 +6,15 @@
         xmlns:local="clr-namespace:Czytam"
         mc:Ignorable="d"
         Icon="/Resources/Images/man.png"
-        Title="Poczytajmy! Aplikacja wspomagająca naukę czytania." MinHeight="800" MinWidth="1000"
+        Title="Poczytajmy! Aplikacja wspomagająca naukę czytania metodą sylabową." MinHeight="800" MinWidth="1000"
         WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanResize">
-    <Grid Margin="0">
-        <Grid.Background>
-            <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
-        </Grid.Background>
+    <Grid Style="{StaticResource generalGrid}">
 
-        <Button x:Name="chooseAccountButton" Content="Wybierz konto" Margin="0,100,0,0" Width="400" Click="ChooseAccountButton_Click" Height="100" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" RenderTransformOrigin="0.952,0.457" FontFamily="Nyala" FontSize="22" IsEnabled="False" Visibility="Hidden">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
-                    <GradientStop Color="Violet" Offset="0"/>
-                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button Content="Dodaj konto" Margin="0,-200,0,0" Width="400" Height="100" Click="AddNewUserButton_Click" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Nyala" FontSize="22">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
-                    <GradientStop Color="Violet" Offset="0"/>
-                    <GradientStop Color="#FF0F5FAE" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+        <Button Style="{StaticResource generalButton}" x:Name="chooseAccountButton" Content="Wybierz konto" Margin="0,150,0,0" Click="ChooseAccountButton_Click" RenderTransformOrigin="0.952,0.457" IsEnabled="False" Visibility="Hidden"/>
+
+        <Button Style="{StaticResource generalButton}" Content="Dodaj konto" Margin="0,-150,0,0" Click="AddNewUserButton_Click" />
         
-        <Label Content="Poczytajmy!" HorizontalAlignment="Center" Margin="230,50,230,0" VerticalAlignment="Top" FontFamily="Segoe Script" FontSize="48" FontWeight="Bold" FontStyle="Italic" />
+        <Label Style="{StaticResource titleLabel}" Content="Poczytajmy!"/>
 
     </Grid>
 </Window>

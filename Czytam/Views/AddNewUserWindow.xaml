@@ -9,35 +9,20 @@
         Title="Dodaj nowego Czytelnika" MinHeight="800" MinWidth="1000"
         WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanResize">
 
-        <Grid>
-            <Grid.Background>
-                <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
-            </Grid.Background>
-
-            <Label Content="Dodaj nowego Czytelnika" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Segoe Script" FontStyle="Italic" FontWeight="Bold" />
+    <Grid Style="{StaticResource generalGrid}">
+        <Label Style="{StaticResource titleLabel}" Content="Dodaj nowego Czytelnika"/>
             <TextBox x:Name ="firstNameTextBox" HorizontalAlignment="Center" Height="60" Margin="0,-270,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="400" FontFamily="Nyala" FontSize="30" Background="White" />
             <Label Content="Imię" HorizontalAlignment="center" VerticalAlignment="Center" Margin="-350,-185,0,0" FontFamily="Nyala" FontSize="20" FontStyle="Italic"/>
-            <DatePicker x:Name ="dateOfBirthDatePicker" HorizontalAlignment="Center" Height="60" Margin="0,-40,0,0" VerticalAlignment="Center" Width="400" FontFamily="Nyala" FontSize="24"  SelectedDateFormat="Long"  Background="White">
+        <DatePicker x:Name ="dateOfBirthDatePicker" HorizontalAlignment="Center" Height="60" Margin="0,-40,0,0" VerticalAlignment="Center" Width="400" FontFamily="Nyala" FontSize="24"  SelectedDateFormat="Long"  Background="White" />
 
-            </DatePicker>
-            <Label Content="Data urodzenia" HorizontalAlignment="center" VerticalAlignment="Center" Margin="-270,40,0,0" FontFamily="Nyala" FontSize="20" FontStyle="Italic"/>
-            <Button Click="CreateUserButton_Click" Content="Zapisz" HorizontalAlignment="Center" Margin="0,0,0,-200" VerticalAlignment="Center" Width="150" Height="50" Grid.Column="1"  FontFamily="Nyala" FontSize="22">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
-                        <GradientStop Color="Violet" Offset="0"/>
-                        <GradientStop Color="#FF0F5FAE" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-        <Button Content="Cofnij" HorizontalAlignment="Right" Margin="0,0,100,100" VerticalAlignment="Bottom" Width="70" Height="40" Click="BackButton_Click" FontFamily="Nyala" FontSize="18">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
-                        <GradientStop Color="Violet" Offset="0"/>
-                        <GradientStop Color="#FF0F5FAE" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
 
-        </Grid>
+        <Label Content="Data urodzenia" HorizontalAlignment="center" VerticalAlignment="Center" Margin="-270,40,0,0" FontFamily="Nyala" FontSize="20" FontStyle="Italic"/>
+        <Button Style="{StaticResource backgroundButton}" Click="CreateUserButton_Click" Content="Zapisz" HorizontalAlignment="Center" Margin="0,0,0,-200" VerticalAlignment="Center" Width="150" Height="50" FontFamily="Nyala" FontSize="22"/>
+        
+        <Button Style="{StaticResource backButton}" Click="BackButton_Click"/>
+        
+
+
+    </Grid>
     </Window>
 

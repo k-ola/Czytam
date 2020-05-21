@@ -8,47 +8,29 @@
         mc:Ignorable="d"
         Title="LessonWindow" MinHeight="800" MinWidth="1000"
         WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="CanResize">
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
-        </Grid.Background>
+    <Grid Style="{StaticResource generalGrid}">
+        
         <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinWidth="1000" MinHeight="800">
-            <TabItem x:Name="descriptionTab" Header="Opis lekcji" Background="Violet" FontFamily="Nyala" FontSize="22" HorizontalAlignment="Center">
-                <Grid>
-                    <Grid.Background>
-                        <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
-                    </Grid.Background>
+            <TabItem Style="{StaticResource tabItem}" x:Name="descriptionTab" Header="Opis lekcji">
+                <Grid Style="{StaticResource generalGrid}">
 
-                    <Label Style="{StaticResource titleLabel}" x:Name="descriptionTabLessonNumberLabel" Content="Lekcja 1"/>
+                    <Label Style="{StaticResource titleLabel}" x:Name="descriptionTabLessonNumberLabel"/>
                     <TextBlock x:Name="lessonDescriptionTextBlock" Text="Opis lekcji" Background="Violet" Opacity="0.85" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,160,0,0" Width="700" Height="300" TextAlignment="Center" FontFamily="Nyala" FontSize="28" Padding="40,60,40,60" TextWrapping="Wrap"/>
-                    <Button Content="Przejdź do ćwiczeń" Height="80" Width="220" HorizontalAlignment="Center" Margin="0,300,0,0" FontFamily="Nyala" FontSize="26" VerticalAlignment="Center" Click="GoToExercisesButton_Click">
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
-                            <GradientStop Color="Violet" Offset="0"/>
-                            <GradientStop Color="#FF0F5FAE" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                    </Button>
+                    <Button Style="{StaticResource backgroundButton}" Content="Przejdź do ćwiczeń" Height="80" Width="220" HorizontalAlignment="Center" Margin="0,300,0,0" FontFamily="Nyala" FontSize="26" VerticalAlignment="Center" Click="GoToExercisesButton_Click"/>
+
                     <Button Style="{StaticResource backButton}" Click="BackButton_Click" Content="Zakończ" />
                 </Grid>
             </TabItem>
-            <TabItem x:Name="syllablesTab" Header="Sylaby" Background="Violet" FontFamily="Nyala" FontSize="22" HorizontalAlignment="Center">
-                <Grid>
-                    <Grid.Background>
-                        <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
-                    </Grid.Background>
-                    <Label Style="{StaticResource titleLabel}" x:Name="syllablesTabLessonNumberLabel" Content="Lekcja 1"/>
+            <TabItem Style="{StaticResource tabItem}" x:Name="syllablesTab" Header="Sylaby">
+                <Grid Style="{StaticResource generalGrid}">
+                    <Label Style="{StaticResource titleLabel}" x:Name="syllablesTabLessonNumberLabel"/>
                     <StackPanel x:Name="mainSyllablesStackPanel" HorizontalAlignment="Center" Height="auto" Margin="0,170,0,0" VerticalAlignment="Top" Width="auto" Orientation="Vertical"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="wordsTab" Header="Słowa" Background="Violet" FontFamily="Nyala" FontSize="22" HorizontalAlignment="Center">
-                <Grid>
-                    <Grid.Background>
-                        <ImageBrush ImageSource="/Resources/Images/3438857.jpg"/>
-                    </Grid.Background>
-                    <Label Style="{StaticResource titleLabel}" x:Name="wordsTabLessonNumberLabel" Content="Lekcja 1"/>
+            <TabItem Style="{StaticResource tabItem}" x:Name="wordsTab" Header="Słowa">
+                <Grid Style="{StaticResource generalGrid}">
+                    <Label Style="{StaticResource titleLabel}" x:Name="wordsTabLessonNumberLabel"/>
                     <StackPanel x:Name="mainWordsStackPanel" HorizontalAlignment="center" Height="auto" Margin="0,170,0,0" VerticalAlignment="Top" Width="auto"/>
-
                 </Grid>
             </TabItem>
         </TabControl>
